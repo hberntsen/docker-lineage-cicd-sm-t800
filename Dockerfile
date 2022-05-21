@@ -34,11 +34,11 @@ ENV CCACHE_EXEC /usr/bin/ccache
 
 # Environment for the LineageOS branches name
 # See https://github.com/LineageOS/android/branches for possible options
-ENV BRANCH_NAME 'lineage-16.0'
+ENV BRANCH_NAME 'lineage-17.1'
 
 # Environment for the device list (separate by comma if more than one)
 # eg. DEVICE_LIST=hammerhead,bullhead,angler
-ENV DEVICE_LIST ''
+ENV DEVICE_LIST 'chagallwifi'
 
 # Release type string
 ENV RELEASE_TYPE 'UNOFFICIAL'
@@ -73,7 +73,7 @@ ENV CRONTAB_TIME 'now'
 ENV CLEAN_AFTER_BUILD true
 
 # Provide root capabilities builtin inside the ROM (see http://lineageos.org/Update-and-Build-Prep/)
-ENV WITH_SU false
+ENV WITH_SU true
 
 # Provide a default JACK configuration in order to avoid out-of-memory issues
 ENV ANDROID_JACK_VM_ARGS "-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
@@ -102,7 +102,7 @@ ENV LOGS_SUBDIR true
 # restricted patch and embedding the apps that requires it as system privileged
 # apps is a much secure option. See the README.md ("Custom mode") for an
 # example.
-ENV SIGNATURE_SPOOFING "no"
+ENV SIGNATURE_SPOOFING "yes"
 
 # Delete old zips in $ZIP_DIR, keep only the N latest one (0 to disable)
 ENV DELETE_OLD_ZIPS 0

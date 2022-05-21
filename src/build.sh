@@ -183,6 +183,8 @@ for branch in ${BRANCH_NAME//,/ }; do
     echo ">> [$(date)] Syncing branch repository" | tee -a "$repo_log"
     builddate=$(date +%Y%m%d)
     repo sync "${jobs_arg[@]}" -c --force-sync &>> "$repo_log"
+    wget -O .repo/local_manifests/roomservice.xml "https://raw.githubusercontent.com/exynos5420/manifests/lineage-17.1/roomservice.xml"
+    repo sync "${jobs_arg[@]}" -c --force-sync &>> "$repo_log"
 
     if [ ! -d "vendor/$vendor" ]; then
       echo ">> [$(date)] Missing \"vendor/$vendor\", aborting"
